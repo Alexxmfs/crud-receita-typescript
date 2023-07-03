@@ -1,0 +1,38 @@
+<header>
+	<div class="navbar-home" id="navbar-home-container">
+		<div class="logo"><a href="/home"><img src="../../public/img/logo.png" /></a></div>
+		<ul class="links">
+			<li class="menu"><a class="link-a" href="/home">Home</a></li>
+			<li class="menu"><a class="link-a %- (pagina == 'receitas' ? 'active' : '') %>" href="/receitas">Receitas</a></li>
+			<li class="menu"><a class="link-a" href="services">Sobre Nós</a></li>
+		</ul>
+		<a href="/cadastro" class="action_btn %- (pagina == 'agendamento' ? 'active' : '') %>">Criar Receita</a>
+		<div class="toggle_btn">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+	</div>
+
+	<div class="dropdown_menu">
+		<li class="menu"><a class="link-a" href="hero">Home</a></li>
+		<li class="menu"><a class="link-a %- (pagina == 'consulta' ? 'active' : '') %>" href="../pages/receitas.ejs">Receitas</a></li>
+		<li class="menu"><a class="link-a" href="services">Sobre Nós</a></li>
+		<li class="menu"><a href="#" class="action_btn">Criar Receita</a></li>
+	</div>
+</header>
+
+
+
+	<script>
+		const toggleBtn = document.querySelector('.toggle_btn');
+		const toggleBtnIcon	= document.querySelector('.toggle_btn i');
+		const dropDownMenu = document.querySelector('.dropdown_menu');
+
+		toggleBtn.onclick = function () {
+			dropDownMenu.classList.toggle('open');
+			const isOpen = dropDownMenu.classList.contains('open')
+
+			toggleBtnIcon.classList = isOpen
+			? 'fa-solid fa-xmark'
+			: 'fa-solid fa-bars'
+		}
+	</script>

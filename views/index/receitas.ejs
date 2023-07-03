@@ -1,0 +1,27 @@
+
+<div class="veiculos-title">
+    <h1>Veículos</h1>
+    <p>Veículos no estoque: ( <%= receitas.length %> )</p>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <% for (let contador = 0; contador < receitas.length; contador++) { %>
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <div class="card shadow my-4" style="width: 35rem;">
+                <h2><div class="card-header align-center">
+                    <%= receitas[contador].titulo %>
+                </div></h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-top embed-responsive-item" src="/public/img/receitas/<%= receitas[contador].idreceita %>.jpg" alt="Card image cap">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Ingredientes: <%= receitas[contador].ingrediente %> </li>
+                    <li class="list-group-item"> Utensílios: <%= receitas[contador].utensilio %></li>
+                    <li class="list-group-item"> Modo de Preparo: <%= receitas[contador].ModoPreparo %></li>
+                    <li class="list-group-item"> Categoria: <%= receitas[contador].categoria %></li>
+                </ul>
+            </div>
+        </div>
+    <% } %>
+    </div>
+</div>
