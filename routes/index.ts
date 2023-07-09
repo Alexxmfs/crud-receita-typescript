@@ -1,8 +1,8 @@
 import app = require("teem");
 
 class IndexRoute {
-	public async home(req: app.Request, res: app.Response) {
-		res.render("index/home");
+	public async index(req: app.Request, res: app.Response) {
+		res.render("index/index");
 	}
 
 	public async sobre(req: app.Request, res: app.Response) {

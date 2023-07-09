@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const app = require("teem");
 class IndexRoute {
-    async home(req, res) {
-        res.render("index/home");
+    async index(req, res) {
+        res.render("index/index");
     }
     async sobre(req, res) {
         res.render("index/sobre");
@@ -26,25 +26,25 @@ class IndexRoute {
         });
     }
     async criar(req, res) {
-        let veiculo = req.body;
-        if (!veiculo) {
-            res.status(400).json("Veículo inválido");
+        let receitas = req.body;
+        if (!receitas) {
+            res.status(400).json("receita inválido");
             return;
         }
-        if (!veiculo.titulo) {
-            res.status(400).json("Marca do veículo inválido");
+        if (!receitas.titulo) {
+            res.status(400).json("Marca do receita inválido");
             return;
         }
-        if (!veiculo.ingrediente) {
-            res.status(400).json("Modelo do veículo inválido");
+        if (!receitas.ingrediente) {
+            res.status(400).json("Modelo do receita inválido");
             return;
         }
-        if (!veiculo.utensilio) {
-            res.status(400).json("Cor do veículo inválido");
+        if (!receitas.utensilio) {
+            res.status(400).json("Cor do receita inválido");
             return;
         }
-        if (!veiculo.ModoPreparo) {
-            res.status(400).json("Ano do veículo inválido");
+        if (!receitas.ModoPreparo) {
+            res.status(400).json("Ano do receita inválido");
             return;
         }
         let imagem = req.uploadedFiles["imagem"];
@@ -54,7 +54,7 @@ class IndexRoute {
         }
         await app.sql.connect(async (sql) => {
             await sql.beginTransaction();
-            await sql.query("INSERT INTO receita (titulo, ingrediente, utensilio, ModoPreparo, categoria) VALUES (?, ?, ?, ?, ?)", [veiculo.titulo, veiculo.ingrediente, veiculo.utensilio, veiculo.ModoPreparo, veiculo.categoria]);
+            await sql.query("INSERT INTO receita (titulo, ingrediente, utensilio, ModoPreparo, categoria) VALUES (?, ?, ?, ?, ?)", [receitas.titulo, receitas.ingrediente, receitas.utensilio, receitas.ModoPreparo, receitas.categoria]);
             let idreceita = await sql.scalar("SELECT last_insert_id()");
             app.fileSystem.saveUploadedFile("/public/img/receitas/" + idreceita + ".jpg", imagem);
             await sql.commit();
