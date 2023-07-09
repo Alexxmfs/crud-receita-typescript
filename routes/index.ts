@@ -28,30 +28,30 @@ class IndexRoute {
 	@app.http.post()
     @app.route.formData()
     public async criar(req: app.Request, res: app.Response) {
-        let veiculo = req.body;
+        let receitas = req.body;
 	  
-		if (!veiculo) {
-            res.status(400).json("Veículo inválido");
+		if (!receitas) {
+            res.status(400).json("receita inválido");
 			return;
         }
 
-        if (!veiculo.titulo) {
-            res.status(400).json("Marca do veículo inválido");
+        if (!receitas.titulo) {
+            res.status(400).json("Marca do receita inválido");
 			return;
         }
 
-        if (!veiculo.ingrediente) {
-            res.status(400).json("Modelo do veículo inválido");
+        if (!receitas.ingrediente) {
+            res.status(400).json("Modelo do receita inválido");
 			return;
         }
 
-        if (!veiculo.utensilio) {
-            res.status(400).json("Cor do veículo inválido");
+        if (!receitas.utensilio) {
+            res.status(400).json("Cor do receita inválido");
 			return;
         }
 
-        if (!veiculo.ModoPreparo) {
-            res.status(400).json("Ano do veículo inválido");
+        if (!receitas.ModoPreparo) {
+            res.status(400).json("Ano do receita inválido");
 			return;
         }
 
@@ -64,7 +64,7 @@ class IndexRoute {
 		await app.sql.connect(async (sql: app.Sql) => {
             await sql.beginTransaction();
 
-            await sql.query("INSERT INTO receita (titulo, ingrediente, utensilio, ModoPreparo, categoria) VALUES (?, ?, ?, ?, ?)", [veiculo.titulo, veiculo.ingrediente, veiculo.utensilio, veiculo.ModoPreparo, veiculo.categoria]);
+            await sql.query("INSERT INTO receita (titulo, ingrediente, utensilio, ModoPreparo, categoria) VALUES (?, ?, ?, ?, ?)", [receitas.titulo, receitas.ingrediente, receitas.utensilio, receitas.ModoPreparo, receitas.categoria]);
 
             let idreceita = await sql.scalar("SELECT last_insert_id()");
 
