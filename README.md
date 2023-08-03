@@ -1,5 +1,7 @@
 # Criando Api em TypeScript
 
+O projeto de Receitas é uma aplicação web que permite aos usuários listar, visualizar e criar receitas culinárias. O objetivo é fornecer uma plataforma intuitiva e fácil de usar, onde os usuários possam compartilhar suas receitas favoritas e descobrir novas delícias culinárias.
+
 <img src="https://raw.githubusercontent.com/Alexxmfs/crud-receita-typescript/master/homepage.PNG" />
 
 ## Descrição do Projeto
