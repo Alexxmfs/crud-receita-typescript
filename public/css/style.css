@@ -168,7 +168,7 @@ header {
 .title-home{
     font-size: 2.8rem;
     font-weight: bold;
-    margin-top: 300px;
+    margin-top: 180px;
     padding-left: 50px;
 }
 
@@ -178,8 +178,8 @@ header {
 }
 
 .cake-img-home{
-    margin-top: -200px;
-    padding-right: 100px;
+    margin-top: -180px;
+    padding-right: 50px;
     float: right;
 }
 
