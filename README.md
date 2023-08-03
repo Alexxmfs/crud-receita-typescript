@@ -1,5 +1,7 @@
 # Criando Api em TypeScript
 
+<img src="https://raw.githubusercontent.com/Alexxmfs/crud-receita-typescript/master/homepage.PNG" />
+
 ## Descrição do Projeto
 
 O projeto tem como objetivo desenvolver um sistema de cadastro de produtos para uma padaria, incluindo o controle dos produtos cadastrados. O sistema permitirá listar os produtos, além de possibilitar a edição e exclusão dos mesmos, caso necessário. Além disso, inclui a criação de uma página de promoção, uma seção de história da padaria, uma página "Sobre Nós" e uma landing page para incentivar o cadastro. Essas adições tornarão o sistema mais completo e atrativo.
