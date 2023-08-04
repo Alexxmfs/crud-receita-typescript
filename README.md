@@ -22,3 +22,15 @@ mysqldatabase=[NOME DO BANCO]
 ```
 
 - A pasta `receitas` deve ser criada em `/public/img`
+
+
+<h2><b>Tecnologias Utilizadas</b></h2>
+
+  <div style="display: inline_block"><br>
+  <img align="center" alt="Alex-Ejs" height="60" width="60" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png"          hspace="10">
+
+  <img align="center" alt="Alex-TypeScript" height="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" hspace="10" />
+  
+   <img align="center" alt="Alex-JavaScript" height="60" width="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" hspace="10" />
+
+  </div>
